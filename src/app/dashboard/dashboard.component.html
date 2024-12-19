@@ -1,0 +1,13 @@
+<!-- dashboard.component.html -->
+<div class="dashboard-container">
+  <h2>Welcome to your Dashboard</h2>
+  <div *ngIf="userEmail && userToken">
+    <p><strong>Email:</strong> {{ userEmail }}</p>
+    <p><strong>Token:</strong> {{ userToken | slice:0:20 }}...</p>
+    <!-- Optionally, you can display a truncated version of the token -->
+    <button (click)="logout()">Logout</button>
+  </div>
+  <div *ngIf="!userToken">
+    <p>You are not logged in. Please log in again.</p>
+  </div>
+</div>
